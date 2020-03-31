@@ -1,0 +1,295 @@
+/// version = 0.1
+/// title = "nNGM: Mapping IHC"
+
+map "http://uk-koeln.de/fhir/StructureMap/nNGM_Mapping_MolPatho" = nNGM_Mapping_IHC
+
+uses "http://hl7.org/fhir/StructureDefinition/CTS_Transport" as source
+uses "http://hl7.org/fhir/StructureDefinition/Organization" as target
+uses "http://hl7.org/fhir/StructureDefinition/Practitioner" as target
+uses "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" as target
+uses "http://hl7.org/fhir/StructureDefinition/ProcedureRequest" as target
+uses "http://hl7.org/fhir/StructureDefinition/Patient" as target
+uses "http://hl7.org/fhir/StructureDefinition/Observation" as target
+
+uses "http://hl7.org/fhir/StructureDefinition/Encounter" as target
+uses "http://hl7.org/fhir/StructureDefinition/Specimen" as target
+uses "http://hl7.org/fhir/StructureDefinition/Device" as target
+
+
+group TransformObservationIHC(source src: CTS_Transport, target tgt: Observation)
+{
+       src -> tgt.id = uuid();
+       src -> tgt.meta as meta collate, meta.profile = '?';
+       src -> tgt.status = 'active';
+
+       src -> tgt.system = 'http://ncit.nci.nih.gov';
+       src -> tgt.code = 'C23020';
+       src -> tgt.display = 'Immonuhistochemistry Staining Method';
+    
+       src.operations as operations, operations.data as data then
+       {
+             //Fall-ID
+              data.values as values where "blockindex = 0 and groupindex = 0 and itemid = 'id_1600'" then
+              {
+                  values.value as fallID -> tgt.identifier = id('http://uk-koeln.de/fhir/NamingSystem/nNGM/fallnummer', fallID);
+              };
+
+             //Biopsy-ID
+              data.values as values where "blockindex = 0 and groupindex = 0 and itemid = 'id_1601'" then
+              {
+                  values.value as biopsyID -> tgt.identifier = id('http://uk-koeln.de/NamingSystem/nNGM/biopsienummer', biopsyID);
+              };
+                
+             //if .. exists then CK7 
+             data.values as values where "blockindex = 1 and groupindex = 14 and itemid = 'id_2038".exists() then
+             {
+                //CK7 phaenotype value?, code, date??
+                data.values as values as phaenotyp -> tgt.component = create('BackboneElement') as component,
+                component.code = cc('http://ncit.nci.nih.gov', 'C96445', 'KRT7 wt Allele'),
+                component.value = (), 
+                component.interpretation,
+                component.referenceRange;
+
+                data.values as values as antikoerper -> tgt.component = create('BackboneElement') as component,
+                component.code = cc(),
+                component.value = cc(),
+                component.interpretation,
+                component.referenceRange;
+
+                data.values as values as hersteller -> tgt.component = create('BackboneElement') as component,
+                component.code = cc(),
+                component.value = cc(),
+                component.interpretation,
+                component.referenceRange;
+
+                data.values as values as sop -> tgt.component = create('BackboneElement') as component,
+                component.code = cc(),
+                component.value = cc(),
+                component.interpretation,
+                component.referenceRange;
+
+                data.values as values as standort -> tgt.component = create('BackboneElement') as component,
+                component.code = cc(),
+                component.value = cc(),
+                component.interpretation,
+                component.referenceRange;
+
+                //CK7 phaenotype
+                data.values as values where "blockindex = 1 and groupindex = 14 and itemid = 'id_2038'" then
+                {
+                    values.value as phaenotyp -> tgt.identifier = phaenotyp;
+                };
+
+                //CK7 code
+                tgt.code = cc('http://ncit.nci.nih.gov', 'C96445', 'KRT7 wt Allele');
+            
+                //CK7 DateOfAssesment
+                data.values as values where "blockindex = 1 and groupindex = 14 and itemid = 'id_2037'" then
+                {
+                    values.value as effectiveDateTime -> tgt.identifier = effectiveDateTime;
+                };
+ 
+                //CK7 Antikoerper
+                data.values as values where "blockindex = 1 and groupindex = 14 and itemid = 'id_2041'" then
+                {
+                    values.value as antikoerper -> tgt.antikoerper = cc('', antikoerper);
+                };             
+
+                //CK7 Hersteller
+                data.values as values where "blockindex = 1 and groupindex = 14 and itemid = 'id_2042'" then
+                {
+                    values.value as hersteller -> tgt.antikoerper = cc('', hersteller);
+                };   
+
+                //CK7 SOPVersionsnummerAmStandord
+                data.values as values where "blockindex = 1 and groupindex = 14 and itemid = 'id_2043'" then
+                {
+                    values.value as SOPVersionsnummerAmStandord -> tgt.identifier = SOPVersionsnummerAmStandord;
+                };
+
+                //CK7 Standort Organisation?
+                data.values as values where "blockindex = 1 and groupindex = 14 and itemid = 'id_2044'" then
+                {
+                    values.value as standort -> tgt.antikoerper = cc('', standort);
+                };   
+
+                //CK7 Ergebnis
+                data.values as values where "blockindex = 1 and groupindex = 14 and itemid = 'id_2045'" then
+                {
+                    values.value as ergebnis -> tgt.erbebnis? = ergebnis;
+                };  
+            } 
+            //if .. exists then MIB1-Expression
+            data.values as values where "blockindex = 1 and groupindex = 15 and itemid = 'id_2056".exists() then
+            {
+
+                //MIB1 phaenotype
+                data.values as values where "blockindex = 1 and groupindex = 15 and itemid = 'id_2056'" then
+                {
+                    values.value as phaenotyp -> tgt.identifier = phaenotyp;
+                };
+
+                //MIB1 code
+                tgt.code = cc('http://ncit.nci.nih.gov', 'C104651', 'KRT7 wt Allele');
+            
+                //MIB1 DateOfAssesment
+                data.values as values where "blockindex = 1 and groupindex = 15 and itemid = 'id_2055'" then
+                {
+                    values.value as effectiveDateTime -> tgt.identifier = effectiveDateTime;
+                };
+ 
+                //MIB1 Antikoerper
+                data.values as values where "blockindex = 1 and groupindex = 15 and itemid = 'id_2059'" then
+                {
+                    values.value as antikoerper -> tgt.antikoerper = cc('', antikoerper);
+                };             
+
+                //MIB1 Hersteller
+                data.values as values where "blockindex = 1 and groupindex = 15 and itemid = 'id_2060'" then
+                {
+                    values.value as hersteller -> tgt.antikoerper = cc('', hersteller);
+                };   
+
+                //MIB1 SOPVersionsnummerAmStandord
+                data.values as values where "blockindex = 1 and groupindex = 15 and itemid = 'id_2061'" then
+                {
+                    values.value as SOPVersionsnummerAmStandord -> tgt.identifier = SOPVersionsnummerAmStandord;
+                };
+
+                //MIB1 Standort Organisation?
+                data.values as values where "blockindex = 1 and groupindex = 15 and itemid = 'id_2062'" then
+                {
+                    values.value as standort -> tgt.antikoerper = cc('', standort);
+                };   
+
+                //MIB1 Ergebnis
+                data.values as values where "blockindex = 1 and groupindex = 15 and itemid = 'id_2063'" then
+                {
+                    values.value as ergebnis -> tgt.erbebnis? = ergebnis;
+                };  
+            }
+        }
+      
+//NAPSIN A
+NAPSINA-Expression.system = http://ncit.nci.nih.gov
+NAPSINA-Expression.code = ?
+NAPSINA-Expression.display = Napsin-A/NAPSA
+NAPSINA-Expression.DateOfAssessment = datetime();
+NAPSINA-Expression.Phaenotyp = component.phaenotyp.valuecodableconcept?
+NAPSINA-Expression.IHC.system = http://ncit.nci.nih.gov
+NAPSINA-Expression.IHC.code  = C23020
+NAPSINA-Expression.IHC.display = Immonuhistochemistry Staining Method
+NAPSINA-Expression.IHC.Antikoerper = cc('','');
+NAPSINA-Expression.IHC.Hersteller = cc('','');
+NAPSINA-Expression.IHC.SOPVersionsnummerAmstandord = value;
+NAPSINA-Expression.IHC.StandortDreiBuchstabenKuerzel = coding/string?
+NAPSINA-Expression.IHC.Ergebnis = cc();
+
+//P40
+P40-Expression.system = http://ncit.nci.nih.gov
+P40-Expression.code = C250511
+P40-Expression.display = Interleukin-9
+P40-Expression.DateOfAssessment = datetime();
+P40-Expression.Phaenotyp = component.phaenotyp.valuecodableconcept?
+P40-Expression.IHC.system = http://ncit.nci.nih.gov
+P40-Expression.IHC.code  = C23020
+P40-Expression.IHC.display = Immonuhistochemistry Staining Method
+P40-Expression.IHC.Antikoerper = cc('','');
+P40-Expression.IHC.Hersteller = cc('','');
+P40-Expression.IHC.Ergebnis = cc();
+
+//Synaptophysin
+Synaptophysin-Expression.system = http://ncit.nci.nih.gov
+Synaptophysin-Expression.code = C101146
+Synaptophysin-Expression.display = Synaptophysin
+Synaptophysin-Expression.DateOfAssessment = datetime();
+Synaptophysin-Expression.Phaenotyp = component.phaenotyp.valuecodableconcept?
+Synaptophysin-Expression.IHC.system = http://ncit.nci.nih.gov
+Synaptophysin-Expression.IHC.code  = C23020
+Synaptophysin-Expression.IHC.display = Immonuhistochemistry Staining Method
+Synaptophysin-Expression.IHC.Antikoerper = cc('','');
+Synaptophysin-Expression.IHC.Hersteller = cc('','');
+Synaptophysin-Expression.IHC.SOPVersionsnummerAmstandord = value;
+Synaptophysin-Expression.IHC.StandortDreiBuchstabenKuerzel = coding/string?
+Synaptophysin-Expression.IHC.Ergebnis = cc();
+
+//TTF1
+TTF1-Expression.system = http://ncit.nci.nih.gov
+TTF1-Expression.code = C107622
+TTF1-Expression.display = TTF1 Gene
+TTF1-Expression.DateOfAssessment = datetime();
+TTF1-Expression.Phaenotyp = component.phaenotyp.valuecodableconcept?
+TTF1-Expression.IHC.system = http://ncit.nci.nih.gov
+TTF1-Expression.IHC.code  = C23020
+TTF1-Expression.IHC.display = Immonuhistochemistry Staining Method
+TTF1-Expression.IHC.Antikoerper = cc('','');
+TTF1-Expression.IHC.Hersteller = cc('','');
+TTF1-Expression.IHC.SOPVersionsnummerAmstandord = value;
+TTF1-Expression.IHC.StandortDreiBuchstabenKuerzel = coding/string?
+TTF1-Expression.IHC.Ergebnis = cc();
+
+//ALK Fusion IHC profile
+ALK-Fusion-Expression.system = http://ncit.nci.nih.gov
+ALK-Fusion-Expression.code = C81946
+ALK-Fusion-Expression.display = ALK Fusion Protein Expression
+ALK-Fusion-Expression.DateOfAssessment = datetime();
+ALK-Fusion-Expression.Phaenotyp = component.phaenotyp.valuecodableconcept?
+ALK-Fusion-Expression.IHC.system = http://ncit.nci.nih.gov
+ALK-Fusion-Expression.IHC.code  = C23020
+ALK-Fusion-Expression.IHC.display = Immonuhistochemistry Staining Method
+ALK-Fusion-Expression.IHC.Antikoerper = cc('','');
+ALK-Fusion-Expression.IHC.Hersteller = cc('','');
+ALK-Fusion-Expression.IHC.SOPVersionsnummerAmstandord = value;
+ALK-Fusion-Expression.IHC.StandortDreiBuchstabenKuerzel = coding/string?
+ALK-Fusion-Expression.IHC.Ergebnis = cc(); //pos, fraglich, negativ, nicht auswertbar
+
+//MET Amplifikation IHC profile
+MET-Amplifikation-Expression.system = http://ncit.nci.nih.gov
+MET-Amplifikation-Expression.code = C43532
+MET-Amplifikation-Expression.display = c-MET Gene Amplifikation
+MET-Amplifikation-Expression.DateOfAssessment = datetime();
+MET-Amplifikation-Expression.Phaenotyp = component.phaenotyp.valuecodableconcept?
+MET-Amplifikation-Expression.IHC.system = http://ncit.nci.nih.gov
+MET-Amplifikation-Expression.IHC.code  = C23020
+MET-Amplifikation-Expression.IHC.display = Immonuhistochemistry Staining Method
+MET-Amplifikation-Expression.IHC.Antikoerper = cc('','');
+MET-Amplifikation-Expression.IHC.Hersteller = cc('','');
+MET-Amplifikation-Expression.IHC.SOPVersionsnummerAmstandord = value;
+MET-Amplifikation-Expression.IHC.StandortDreiBuchstabenKuerzel = coding/string?
+MET-Amplifikation-Expression.IHC.Ergebnis = cc(); //positiv, fraglich, negativ, nicht auswertbar
+MET-Amplifikation-Expression.IHC.Klassifikation = cc(); //0, 1+, 2+, 3+
+MET-Amplifikation-Expression.IHC.ExpressionHighLevel = binary;
+
+//PD-L1 IHC Expression
+PD-L1-Expression.system = http://ncit.nci.nih.gov
+PD-L1-Expression.code = ?
+PD-L1-Expression.display = PD-L1 Positive
+PD-L1-Expression.DateOfAssessment = datetime();
+PD-L1-Expression.Phaenotyp = component.phaenotyp.valuecodableconcept?
+PD-L1-Expression.IHC.system = http://ncit.nci.nih.gov
+PD-L1-Expression.IHC.code  = C23020
+PD-L1-Expression.IHC.display = Immonuhistochemistry Staining Method
+PD-L1-Expression.IHC.Antikoerper = cc('','');
+PD-L1-Expression.IHC.Hersteller = cc('','');
+PD-L1-Expression.IHC.SOPVersionsnummerAmStandort = string?;
+PD-L1-Expression.IHC.StandortDreiBuchstabenKuerzel = coding/string?
+PD-L1-Expression.IHC.Ergebnis = cc(); //auswertbar, nicht auswertbar
+PD-L1-Expression.IHC.MengeDerTumorzellen = valueratio; 
+PD-L1-Expression.IHC.FlaechePositieverImmunzellen/GesamttumorFlaeche = valueratio;
+
+//ROS1 Fusion IHC Expression
+ROS1-Fusion-Expression.system = http://ncit.nci.nih.gov
+ROS1-Fusion-Expression.code = C131071
+ROS1-Fusion-Expression.display = ROS1 Fusion Poisitive
+ROS1-Fusion-Expression.DateOfAssessment = datetime();
+ROS1-Fusion-Expression.Phaenotyp = component.phaenotyp.valuecodableconcept?
+ROS1-Fusion-Expression.IHC.system = http://ncit.nci.nih.gov
+ROS1-Fusion-Expression.IHC.code  = C23020
+ROS1-Fusion-Expression.IHC.display = Immonuhistochemistry Staining Method
+ROS1-Fusion-Expression.IHC.KitBezeichnung = cc('','');
+ROS1-Fusion-Expression.IHC.Hersteller = cc('','');
+ROS1-Fusion-Expression.IHC.SOPVersionsnummerAmstandord = value;
+ROS1-Fusion-Expression.IHC.StandortDreiBuchstabenKuerzel = coding/string?
+ROS1-Fusion-Expression.IHC.Ergebnis = cc(); //positiv, fraglich, negativ, nicht auswertbar
+
+}

@@ -1,0 +1,39 @@
+/// version = 0.1
+/// title = "nNGM: Mapping Molpatho"
+
+map "http://uk-koeln.de/fhir/StructureMap/nNGM_Mapping_MolPatho" = nNGM_Mapping_Molpatho
+
+import "http://uk-koeln.de/fhir/StructureMap/nNGM_Mapping_IHC"
+import "http://uk-koeln.de/fhir/StructureMap/nNGM_Mapping_ISH"
+import "http://uk-koeln.de/fhir/StructureMap/nNGM_Mapping_FISH"
+import "http://uk-koeln.de/fhir/StructureMap/nNGM_Mapping_NGSFusion"
+import "http://uk-koeln.de/fhir/StructureMap/nNGM_Mapping_NGSAmplifikation"
+
+uses "http://hl7.org/fhir/StructureDefinition/CTS_Transport" as source
+uses "http://hl7.org/fhir/StructureDefinition/Organization" as target
+uses "http://hl7.org/fhir/StructureDefinition/Practitioner" as target
+uses "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" as target
+uses "http://hl7.org/fhir/StructureDefinition/ProcedureRequest" as target
+uses "http://hl7.org/fhir/StructureDefinition/Patient" as target
+uses "http://hl7.org/fhir/StructureDefinition/Observation" as target
+
+
+group TransformBundle(source src: CTS_Transport, target bundle: Bundle)
+{
+    src -> bundle.id = uuid();
+    src -> bundle.type = 'collection';
+
+    src -> bundle.entry as entry, 
+           entry.resource = create('Patient') as patient 
+           then TransformPatient(src, patient), TransformPatientPostHandler(src, patient, bundle);
+
+    src -> bundle.entry as entry, 
+           entry.resource = create('Practitioner') as practitioner 
+           then TransformPractitioner(src, practitioner);
+
+    src -> bundle.entry as entry, 
+           entry.resource = create('Organization') as organization 
+           then TransformOrganization(src, organization);
+}
+
+

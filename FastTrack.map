@@ -1,0 +1,134 @@
+/*
+Fast Track
+*/
+Fall-ID -> extension workflow episode of EpisodeOfCare
+BiopsyID -> Namingsystem?
+
+//Methodik
+Methodik.Assay = cc(); 
+Methodik.Hersteller = cc(); 
+Methodik.SOPVersionsnummerDesStandorts = string;
+Methodik.StandortDreiBuchstabenkuerzel = string;
+Methodik.Untersuchungsauswahl.BRAFExon15 = boolean;
+Methodik.Untersuchungsauswahl.EGFRExon19 = boolean;
+Methodik.Untersuchungsauswahl.EGFRExon20 = boolean;
+Methodik.Untersuchungsauswahl.EGFRExon21 = boolean;
+Methodik.Untersuchungsauswahl.KRASExon2 = boolean;
+Methodik.BRAFExon15.Ergebnis = cc(); //aktivierende mutation, keine aktivierende mutation, nicht auswertbar
+Methodik.BRAFExon15.ChangeDNA = string;
+Methodik.BRAFExon15.ChangeProtein = string;
+Methodik.EGFRExon19.Ergebnis = cc(); //aktivierende mutation, keine aktivierende mutation, nicht auswertbar
+Methodik.EGFRExon19.ChangeDNA = string;
+Methodik.EGFRExon19.ChangeProtein = string;
+Methodik.EGFRExon20.Ergebnis = cc(); //aktivierende mutation, keine aktivierende mutation, nicht auswertbar
+Methodik.EGFRExon20.ChangeDNA = string;
+Methodik.EGFRExon20.ChangeProtein = string;
+Methodik.EGFRExon21.Ergebnis = cc(); //aktivierende mutation, keine aktivierende mutation, nicht auswertbar
+Methodik.EGFRExon21.ChangeDNA = string;
+Methodik.EGFRExon21.ChangeProtein = string;
+Methodik.KRASExon2.Ergebnis = cc(); //aktivierende mutation, keine aktivierende mutation, nicht auswertbar
+Methodik.KRASExon2.ChangeDNA = string;
+Methodik.KRASExon2.ChangeProtein = string;
+
+/*
+NGS Panel
+VCF Coverage?, Sectioned
+*/
+Fall-ID -> extension workflow episode of EpisodeOfCare
+BiopsyID -> Namingsystem?
+
+Panel.Version = cc(); //v01.0, andere
+Panel.Untersuchungsauswahl = cc(); //Untersuchungen -> Panel-Gen, Sonstiges Gen
+Panel.PanelGen.ObligatorischeAngabe.Gen = cc();
+Panel.PanelGen.ObligatorischeAngabe.Exon = string;
+Panel.PanelGen.ObligatorischeAngabe.HGVS_c = string;
+Panel.PanelGen.ObligatorischeAngabe.HGVS_p = string;
+Panel.PanelGen.ObligatorischeAngabe.AllelicFraction = valueratio;
+
+//VCF?
+Panel.PanelGen.OptionaleAngabe.ReadsRefAllel = string;
+Panel.PanelGen.OptionaleAngabe.ReadsALTAllel = string;
+Panel.PanelGen.OptionaleAngabe.GenomeBuild = string;
+Panel.PanelGen.OptionaleAngabe.Chromosome = string;
+Panel.PanelGen.OptionaleAngabe.PositionStart = string;
+Panel.PanelGen.OptionaleAngabe.PositionStop = string;
+Panel.PanelGen.OptionaleAngabe.RefAllele = string;
+Panel.PanelGen.OptionaleAngabe.AltAllele = string;
+Panel.PanelGen.OptionaleAngabe.Biologische/MolekulaireBewertung = string;
+Panel.PanelGen.OptionaleAngabe.Kommentar = string;
+
+Panel.SonstigesGen.ObligatorischeAngabe.Gen = string;
+Panel.SonstigesGen.ObligatorischeAngabe.RefSeqID = string;
+Panel.SonstigesGen.ObligatorischeAngabe.Exon = string;
+Panel.SonstigesGen.ObligatorischeAngabe.HGVS_c = string;
+Panel.SonstigesGen.ObligatorischeAngabe.HGVS_p = string;
+Panel.SonstigesGen.ObligatorischeAngabe.AllelicFraction = valueratio;
+
+Panel.SonstigesGen.OptionaleAngabe.ReadsRefAllel = string;
+Panel.SonstigesGen.OptionaleAngabe.ReadsALTAllel = string;
+Panel.SonstigesGen.OptionaleAngabe.GenomeBuild = string;
+Panel.SonstigesGen.OptionaleAngabe.Chromosome = string;
+Panel.SonstigesGen.OptionaleAngabe.PositionStart = string;
+Panel.SonstigesGen.OptionaleAngabe.PositionStop = string;
+Panel.SonstigesGen.OptionaleAngabe.RefAllele = string;
+Panel.SonstigesGen.OptionaleAngabe.AltAllele = string;
+Panel.SonstigesGen.OptionaleAngabe.Biologische/MolekulaireBewertung = string;
+Panel.SonstigesGen.OptionaleAngabe.Kommentar = string;
+
+/*
+Liquid Biopsy sections
+*/
+Fall-ID -> extension workflow episode of EpisodeOfCare
+BiopsyID -> Namingsystem?
+
+Untersuchungsauswahl.Primaermutation = binary;
+Untersuchungsauswahl.Resistenztestung = binary;
+
+Untersuchungsauswahl.Primaermutation.Assay = string;
+Untersuchungsauswahl.Primaermutation.Hersteller = string;
+Untersuchungsauswahl.Primaermutation.SOPVersionsnummerDesStandorts = string;
+Untersuchungsauswahl.Primaermutation.StandortDreiBuchstabenkuerzel = string;
+Untersuchungsauswahl.Primaermutation.Gen = cc(); //EGFR, ALK, ROS1, BRAF, Other (own value)
+Untersuchungsauswahl.Primaermutation.Phaenotyp = string;
+Untersuchungsauswahl.Primaermutation.ChangeDNA = string;
+Untersuchungsauswahl.Primaermutation.Exon = string;
+Untersuchungsauswahl.Primaermutation.ChangeProtein = string;
+Untersuchungsauswahl.Primaermutation.Ergebnis = cc(); //aktivierende mutation, keine aktivierende mutation, nicht auswertbar
+Untersuchungsauswahl.Primaermutation.MutationTherapiebar = binary;
+
+Untersuchungsauswahl.Resistenztestung.Assay = string;
+Untersuchungsauswahl.Resistenztestung.Hersteller = string;
+Untersuchungsauswahl.Resistenztestung.SOPVersionsnummerDesStandorts = string;
+Untersuchungsauswahl.Resistenztestung.StandortDreiBuchstabenkuerzel = string;
+Untersuchungsauswahl.Resistenztestung.Gen = cc(); //EGFR, ALK, ROS1, BRAF, Other (own value)
+Untersuchungsauswahl.Resistenztestung.Phaenotyp = string;
+Untersuchungsauswahl.Resistenztestung.ChangeDNA = string;
+Untersuchungsauswahl.Resistenztestung.Exon = string;
+Untersuchungsauswahl.Resistenztestung.ChangeProtein = string;
+Untersuchungsauswahl.Resistenztestung.Ergebnis = cc(); //aktivierende mutation, keine aktivierende mutation, nicht auswertbar
+
+/*
+Weitere Untersuchungen Sectioned
+*/
+Fall-ID -> extension workflow episode of EpisodeOfCare
+BiopsyID -> Namingsystem?
+
+Untersuchungsauswahl.Gen = string;
+Untersuchungsauswahl.Phaenotyp = string;
+Untersuchungsauswahl.BezeichnungDerUntersuchung = string;
+Untersuchungsauswahl.Assay = string;
+Untersuchungsauswahl.Hersteller = string;
+Untersuchungsauswahl.SOPVersionsnummerDesStandorts = string;
+Untersuchungsauswahl.StandortDreiBuchstabenkuerzel = string;
+Untersuchungsauswahl.Ergebnis = cc(); //aktivierende mutation, keine aktivierende mutation, nicht auswertbar
+
+
+/*
+Beurteilung
+*/
+Fall-ID -> extension workflow episode of EpisodeOfCare
+
+Empfehlung.Ausgangsdatum = date();
+Empfehlung.Austeller = Practitioner reference;
+Empfehlung.Therapieinformation = string;
+Empfehlung.EmpfehlungEinerSystemischenTherapie = binary;
