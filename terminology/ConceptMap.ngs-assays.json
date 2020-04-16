@@ -1,0 +1,181 @@
+{
+  "resourceType": "ConceptMap",
+  "title": "NgsAssays",
+  "status": "draft",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "group": [
+    {
+      "element": [
+        {
+          "code": "TruSight RNA Pan-Cancer Panel",
+          "target": [
+            {
+              "code": "TruSight_RNA_Pan-Cancer_Panel",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "TST170",
+          "target": [
+            {
+              "code": "TST170",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "Custom Panel",
+          "target": [
+            {
+              "code": "Custom_Panel",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "Oncomine Solid Tumour Fusion Transcript Kit",
+          "target": [
+            {
+              "code": "Oncomine_Solid_Tumour_Fusion_Transcript_Kit",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "Oncomine Focus (RNA)",
+          "target": [
+            {
+              "code": "Oncomine_Focus_(RNA)",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "nNGM v1.0",
+          "target": [
+            {
+              "code": "nNGM_v1.0",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "GeneRead",
+          "target": [
+            {
+              "code": "GeneRead",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "CustomPanel",
+          "target": [
+            {
+              "code": "CustomPanel",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "OncomineSOlidTumourFusionTranscriptKit",
+          "target": [
+            {
+              "code": "OncomineSOlidTumourFusionTranscriptKit",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "OncomineFocus(RNA)",
+          "target": [
+            {
+              "code": "OncomineFocus(RNA)",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "nNGMv1.0",
+          "target": [
+            {
+              "code": "nNGMv1.0",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "GeneRead QIAact Liung RNA Fusion UMI Panel",
+          "target": [
+            {
+              "code": "GeneRead_QIAact_Liung_RNA_Fusion_UMI_Panel",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "Generead QIAact Custom DNA Panel - Lung Panel nNGM 1.0 (v3 UMI Panel)",
+          "target": [
+            {
+              "code": "Generead_QIAact_Custom_DNA_Panel_-_Lung_Panel_nNGM_1.0_(v3_UMI_Panel)",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "GeneRead QIAact Custom DNA Panel - Lung Panel nNGM 1.0(v2))",
+          "target": [
+            {
+              "code": "GeneRead_QIAact_Custom_DNA_Panel_-_Lung_Panel_nNGM_1.0(v2))",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "GeneRead QIAact Custom DNA Panel - Lung Panel nNGM 1.0(v2)))",
+          "target": [
+            {
+              "code": "GeneRead_QIAact_Custom_DNA_Panel_-_Lung_Panel_nNGM_1.0(v2)))",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "GeneRead QIAact Lung RNA Fusion UMI Panel",
+          "target": [
+            {
+              "code": "GeneRead_QIAact_Lung_RNA_Fusion_UMI_Panel",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "GeneRead QIAact Custom DNA Panel - Lung Panel nNGM 1.0 (v2))",
+          "target": [
+            {
+              "code": "GeneRead_QIAact_Custom_DNA_Panel_-_Lung_Panel_nNGM_1.0_(v2))",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "url": "http://uk-koeln.de/fhir/ConceptMap/ngs-assays",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>NgsAssays</h2><tt>http://uk-koeln.de/fhir/ConceptMap/ngs-assays</tt></div>"
+  },
+  "sourceCanonical": "CTSMolpatho",
+  "targetCanonical": "http://uk-koeln.de/fhir/ValueSet/ngs-assays",
+  "name": "NgsAssays"
+}

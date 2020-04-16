@@ -7,7 +7,7 @@
   },
   "url": "http://uk-koeln.de/fhir/ValueSet/obs-components",
   "version": "1.0.0",
-  "name": "ObservationMethods",
+  "name": "ObservationComponents",
   "title": "Observation Methods",
   "status": "active",
   "experimental": false,

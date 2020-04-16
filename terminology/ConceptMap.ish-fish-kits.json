@@ -1,0 +1,181 @@
+{
+  "resourceType": "ConceptMap",
+  "title": "KitBezeichnung",
+  "status": "draft",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "group": [
+    {
+      "element": [
+        {
+          "code": "Display",
+          "target": [
+            {
+              "code": "Code",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "ZytoDot 2C SPEC ALK Break Apart Probe",
+          "target": [
+            {
+              "code": "ZytoDot_2C_SPEC_ALK_Break_Apart_Probe",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "ZytoLight SPEC ALK/EML4 TriCheck Probe",
+          "target": [
+            {
+              "code": "ZytoLight_SPEC_ALK/EML4_TriCheck_Probe",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "Vysis ALK Break Apart FISH Probe",
+          "target": [
+            {
+              "code": "Vysis_ALK_Break_Apart_FISH_Probe",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "MET DNP Probe/Chromosome 7 DIG Probe",
+          "target": [
+            {
+              "code": "MET_DNP_Probe/Chromosome_7_DIG_Probe",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "ZytoLight SPEC MET/CEN 7 DUAl Color Probe",
+          "target": [
+            {
+              "code": "ZytoLight_SPEC_MET/CEN_7_DUAl_Color_Probe",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "MET (7q31)/SE 7 (Kreatech)",
+          "target": [
+            {
+              "code": "MET_(7q31)/SE_7_(Kreatech)",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "MET Break Apart Sonde_LMU",
+          "target": [
+            {
+              "code": "MET_Break_Apart_Sonde_LMU",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "ZytoDot 2C SPEC RET Break Apart Probe)",
+          "target": [
+            {
+              "code": "ZytoDot_2C_SPEC_RET_Break_Apart_Probe)",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "ZytoLight SPEC RET Dual Color Break Apart Probe",
+          "target": [
+            {
+              "code": "ZytoLight_SPEC_RET_Dual_Color_Break_Apart_Probe",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "Vysis 10q11 RET Break-Apart FISH Probe (RUO)",
+          "target": [
+            {
+              "code": "Vysis_10q11_RET_Break-Apart_FISH_Probe_(RUO)",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "RET Break Apart Sonde_LMU",
+          "target": [
+            {
+              "code": "RET_Break_Apart_Sonde_LMU",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "ZytoDot 2C SPEC ROS1 Break Apart Probe",
+          "target": [
+            {
+              "code": "ZytoDot_2C_SPEC_ROS1_Break_Apart_Probe",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "Vysis 6q22 ROS1 Break Apart FISH Probe (RUO)",
+          "target": [
+            {
+              "code": "Vysis_6q22_ROS1_Break_Apart_FISH_Probe_(RUO)",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "ROS1 Break Apart Sonde_LMU",
+          "target": [
+            {
+              "code": "ROS1_Break_Apart_Sonde_LMU",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "GeneRead QIAact Lung RNA Fusion UMI Panel",
+          "target": [
+            {
+              "code": "GeneRead_QIAact_Lung_RNA_Fusion_UMI_Panel",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "GeneRead QIAact Custom DNA Panel - Lung Panel nNGM 1.0 (v2))",
+          "target": [
+            {
+              "code": "GeneRead_QIAact_Custom_DNA_Panel_-_Lung_Panel_nNGM_1.0_(v2))",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "url": "http://uk-koeln.de/fhir/ConceptMap/ish-fish-kits",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>KitBezeichnung</h2><tt>http://uk-koeln.de/fhir/ConceptMap/ish-fish-kits</tt></div>"
+  },
+  "targetCanonical": "http://uk-koeln.de/fhir/ValueSet/ish-fish-kits",
+  "sourceCanonical": "CTSMolpatho",
+  "name": "KitBezeichnung"
+}

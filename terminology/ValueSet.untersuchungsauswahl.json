@@ -1,0 +1,105 @@
+{
+  "resourceType": "ValueSet",
+  "url": "http://uk-koeln.de/fhir/ValueSet/untersuchungsauswahl",
+  "title": "Untersuchungsauswahl",
+  "status": "draft",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncit.nci.nih.gov/",
+        "concept": [
+          {
+            "code": "C38184",
+            "display": "ALK"
+          },
+          {
+            "code": "C96445",
+            "display": "CK7"
+          },
+          {
+            "code": "C18325",
+            "display": "MET"
+          },
+          {
+            "code": "C104651",
+            "display": "MIB1"
+          },
+          {
+            "code": "C126466",
+            "display": "NAPSIN A"
+          },
+          {
+            "code": "C20511",
+            "display": "P40"
+          },
+          {
+            "code": "C96022",
+            "display": "PD-L1"
+          },
+          {
+            "code": "C18399",
+            "display": "ROS1"
+          },
+          {
+            "code": "C101145",
+            "display": "SYNAPTHOPHYSIN"
+          },
+          {
+            "code": "C107622",
+            "display": "TTF1"
+          },
+          {
+            "code": "C18257",
+            "display": "RET"
+          },
+          {
+            "code": "C18551",
+            "display": "NTRK1"
+          },
+          {
+            "code": "C24646",
+            "display": "NTRK2"
+          },
+          {
+            "display": "NTRK3",
+            "code": "C24647"
+          },
+          {
+            "display": "FGFR1",
+            "code": "C19929"
+          },
+          {
+            "display": "FGFR2",
+            "code": "C19931"
+          },
+          {
+            "display": "FGFR3",
+            "code": "C24393"
+          },
+          {
+            "display": "FGFR4",
+            "code": "C20743"
+          },
+          {
+            "display": "Sonstiges",
+            "code": "C16612"
+          }
+        ]
+      }
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Untersuchungsauswahl</h2><tt>http://uk-koeln.de/fhir/ValueSet/untersuchungsauswahl</tt></div>"
+  },
+  "name": "Untersuchungsauswahl"
+}

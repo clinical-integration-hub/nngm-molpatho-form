@@ -27,6 +27,8 @@
             "code": "LA8982-6",
             "display": "Medium"
           },
+	    "code": "LA893-4",
+	    "display": "Low"
           {
             "code": "LA32-8",
             "display": "No"

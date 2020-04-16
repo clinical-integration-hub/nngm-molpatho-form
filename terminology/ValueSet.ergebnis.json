@@ -1,0 +1,61 @@
+{
+  "resourceType": "ValueSet",
+  "url": "http://uk-koeln.de/fhir/ValueSet/ergebnis",
+  "title": "Ergebnis",
+  "status": "draft",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "positiv",
+            "display": "positiv"
+          },
+          {
+            "code": "negativ",
+            "display": "negativ"
+          },
+          {
+            "code": "nicht auswertbar",
+            "display": "nicht auswertbar"
+          },
+          {
+            "code": "fraglich",
+            "display": "fraglich"
+          },
+          {
+            "code": "positiv (high-level amplification)",
+            "display": "positiv (high-level amplification)"
+          },
+          {
+            "code": "positiv (moderate-level amplification)",
+            "display": "positiv (moderate-level amplification)"
+          },
+          {
+            "code": "aktivierende Mutation",
+            "display": "aktivierende Mutation"
+          },
+          {
+            "code": "keine aktivierende Mutation",
+            "display": "keine aktivierende Mutation"
+          }
+        ]
+      }
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Ergebnis</h2><tt>http://uk-koeln.de/fhir/ValueSet/ergebnis</tt></div>"
+  },
+  "name": "Ergebnis"
+}
