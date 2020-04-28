@@ -315,6 +315,11 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.specimen.id",
+        "path": "Observation.specimen.id",
+        "mustSupport": true
+      },
+      {
         "id": "Observation.component",
         "extension": [
           {
