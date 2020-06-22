@@ -59,16 +59,6 @@
       },
       {
         "id": "Observation.extension:episodeOfCare",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.extension",
         "sliceName": "episodeOfCare",
         "type": [
@@ -85,14 +75,6 @@
         "id": "Observation.status",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          },
-          {
             "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint",
             "valueString": "default: final"
           }
@@ -102,31 +84,11 @@
       },
       {
         "id": "Observation.category",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.category",
         "mustSupport": true
       },
       {
         "id": "Observation.code",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.code",
         "mustSupport": true,
         "binding": {
@@ -142,76 +104,35 @@
       },
       {
         "id": "Observation.subject",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.subject",
         "mustSupport": true
       },
       {
         "id": "Observation.issued",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.issued",
         "mustSupport": true
       },
       {
         "id": "Observation.value[x]",
-        "extension": [
+        "path": "Observation.value[x]",
+        "type": [
           {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
+            "code": "CodeableConcept"
           }
         ],
-        "path": "Observation.value[x]",
-        "mustSupport": true
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://uk-koeln.de/fhir/ValueSet/cancer-base/grading"
+        }
       },
       {
         "id": "Observation.interpretation",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.interpretation",
         "mustSupport": true
       },
       {
         "id": "Observation.bodySite",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.bodySite",
         "mustSupport": true,
         "binding": {
@@ -227,46 +148,16 @@
       },
       {
         "id": "Observation.method",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.method",
         "mustSupport": false
       },
       {
         "id": "Observation.specimen",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.specimen",
         "mustSupport": true
       },
       {
         "id": "Observation.component",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component",
         "slicing": {
           "discriminator": [
@@ -281,62 +172,22 @@
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomLepidisch",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component",
         "sliceName": "wachtumsmusterBeiAdenokarzinomLepidisch",
         "max": "1"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomLepidisch.code.coding.system",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code.coding.system",
         "fixedUri": "urn:oid:2.16.840.1.113883.6.43.1"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomLepidisch.code.coding.code",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code.coding.code",
         "fixedCode": "8250/3"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomLepidisch.value[x]",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.value[x]",
         "min": 1,
         "type": [
@@ -347,62 +198,22 @@
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomAzinaer",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component",
         "sliceName": "wachtumsmusterBeiAdenokarzinomAzinaer",
         "max": "1"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomAzinaer.code.coding.system",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code.coding.system",
         "fixedUri": "urn:oid:2.16.840.1.113883.6.43.1"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomAzinaer.code.coding.code",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code.coding.code",
         "fixedCode": "8551/3"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomAzinaer.value[x]",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.value[x]",
         "min": 1,
         "type": [
@@ -413,62 +224,22 @@
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomPapilaer",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component",
         "sliceName": "wachtumsmusterBeiAdenokarzinomPapilaer",
         "max": "1"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomPapilaer.code.coding.system",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code.coding.system",
         "fixedUri": "urn:oid:2.16.840.1.113883.6.43.1"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomPapilaer.code.coding.code",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code.coding.code",
         "fixedCode": "8260/3"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomPapilaer.value[x]",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.value[x]",
         "min": 1,
         "type": [
@@ -479,62 +250,22 @@
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomMikropapilaer",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component",
         "sliceName": "wachtumsmusterBeiAdenokarzinomMikropapilaer",
         "max": "1"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomMikropapilaer.code.coding.system",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code.coding.system",
         "fixedUri": "urn:oid:2.16.840.1.113883.6.43.1"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomMikropapilaer.code.coding.code",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code.coding.code",
         "fixedCode": "8265/3"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomMikropapilaer.value[x]",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.value[x]",
         "min": 1,
         "type": [
@@ -545,32 +276,12 @@
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomSolide",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component",
         "sliceName": "wachtumsmusterBeiAdenokarzinomSolide",
         "max": "1"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomSolide.code",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code",
         "binding": {
           "extension": [
@@ -584,46 +295,16 @@
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomSolide.code.coding.system",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code.coding.system",
         "fixedUri": "urn:oid:2.16.840.1.113883.6.43.1"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomSolide.code.coding.code",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.code.coding.code",
         "fixedCode": "8230/3"
       },
       {
         "id": "Observation.component:wachtumsmusterBeiAdenokarzinomSolide.value[x]",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "Observation.component.value[x]",
         "min": 1,
         "type": [
