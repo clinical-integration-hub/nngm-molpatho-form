@@ -312,6 +312,13 @@
             "code": "Quantity"
           }
         ]
+      },
+      {
+        "id": "Observation.component:anteil",
+        "path": "Observation.component",
+        "sliceName": "anteil",
+        "max": "1",
+        "mustSupport": true
       }
     ]
   }
