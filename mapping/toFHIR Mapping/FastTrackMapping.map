@@ -1,0 +1,313 @@
+/// version = 0.1
+/// title = "FastTrackMapping"
+
+map "http://uk-koeln.de/fhir/StructureMap/FastTrackMapping" = FastTrackMapping
+
+uses "http://hl7.org/fhir/StructureDefinition/CTS_Transport" as source
+
+uses "http://hl7.org/fhir/StructureDefinition/Observation" as target
+uses "http://hl7.org/fhir/StructureDefinition/ServiceRequest" as target
+uses "http://hl7.org/fhir/StructureDefinition/Bundle" as target
+
+group TransformBundle(source src: CTS_Transport, target tgt: Bundle)
+{
+    src -> tgt.id = uuid();
+    src -> tgt.entry as entry, entry.resource = create('Observation') as observation then TransformObservation(src, observation);
+}
+
+/* ------------------------------ Observation ---------------------------- */
+group TransformObservation(source src: CTS_Transport, target tgt: Observation)
+{
+    src -> tgt.id = uuid();
+    src -> tgt.meta as meta collate, meta.profile = 'http://uk-koeln.de/fhir/StructureDefinition/Observation/fasttrack';
+
+    /* ------------------------------ Obligatory elements on map  ---------------------------- */
+    // Status
+    src -> tgt.status = c('', '', ''); // TBD
+
+    // Code
+    src -> tgt.code = cc('','', ''); // TBD
+
+    // Method
+    /*
+    *   Is it okay?
+    */
+    src ->  tgt.method = cc('', '', ''); // TBD
+
+
+    src.operations as operations, operations.data as data then
+    {
+        /* ------------------------------ Untersuchungen  ---------------------------- */
+        // Fast Track
+        data.values as values where "blockindex = 3 and groupindex = 0 and itemid = 'id_2512'" then 
+        {
+            values.value as text -> tgt.note as tgtNote,
+            
+            tgtNote.text = text;
+        };
+
+        /* ------------------------------ BRAF Exon 15  ---------------------------- */
+        // Date of Assessment
+        data.values as values where "blockindex = 4 and groupindex = 0 and itemid = 'id_1945'" then 
+        {
+            values.value as date -> tgt.effectiveDateTime = dateOp(date);
+        };
+
+        // Assay
+        data.values as values where "blockindex = 4 and groupindex = 0 and itemid = 'id_1912'" then 
+        {
+            values.value as component where "$this = 'assay'" then
+            {   
+
+                /*
+                *   Is it okay?
+                */
+                component ->    tgt.component = create('BackboneElement') as componentAssay,
+                
+                componentAssay.valueCodeableConcept = cc('http://ncit.nci.nih.gov', component);
+            };
+        };
+
+        // Hersteller
+        data.values as values where "blockindex = 4 and groupindex = 0 and itemid = 'id_1913'" then 
+        {
+            values.value as component where "$this = 'hersteller'" then
+            {   
+
+                /*
+                *   Is it correct?
+                *   I did the same than previous element, however I see they are different on the excel file.
+                */
+                component -> tgt.component = create('BackboneElement') as componentHersteller,
+                
+                componentHersteller.valueCodeableConcept = cc('http://uk-koeln.de/fhir/ValueSet/ergebnis', component);
+            };
+        };
+
+        // Ergebnis
+        data.values as values where "blockindex = 4 and groupindex = 0 and itemid = 'id_1946'" then 
+        {
+            values.value as component where "$this = 'ergebnis'" then
+            {   
+                component -> tgt.component = create('BackboneElement') as componentErgebnis,
+                
+                componentErgebnis.valueCodeableConcept = cc('(http://uk-koeln.de/fhir/ValueSet/ergebnis', component);
+            };
+        };
+        
+        // Change DNA
+        data.values as values where "blockindex = 4 and groupindex = 0 and itemid = 'id_1947'" then 
+        {
+            values.value as componentString where "$this = 'dna-chg'" then
+            {   
+                componentString -> tgt.component = create('BackboneElement') as tgtComponentString,
+                
+                tgtComponentString.valueString = componentString;
+            };
+        };  
+
+        // Change Protein
+        data.values as values where "blockindex = 4 and groupindex = 0 and itemid = 'id_1948'" then 
+        {
+            values.value as componentString where "$this = 'amino-acid-chg'" then
+            {   
+                componentString -> tgt.component = create('BackboneElement') as tgtComponentString,
+                
+                tgtComponentString.valueString = componentString;
+            };
+        };
+
+        /* ------------------------------ EGFR Exon 19-21  ---------------------------- */
+        // Date of Assessment
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'ft_grp_egfr_19-21'" then 
+        {
+            values.value as date -> tgt.effectiveDateTime = dateOp(date);
+        };
+
+        // Assay
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_2608'" then 
+        {
+            values.value as component where "$this = 'hersteller'" then
+            {   
+                component -> tgt.component = create('BackboneElement') as componentAssay,
+                
+                componentAssay.valueCodeableConcept = cc('http://ncit.nci.nih.gov', component);
+            };
+        };
+
+        // Hersteller
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_2609'" then 
+        {
+            values.value as component where "$this = 'ergebnis'" then
+            {   
+                component -> tgt.component = create('BackboneElement') as componentHersteller,
+                
+                componentHersteller.valueCodeableConcept = cc('http://uk-koeln.de/fhir/ValueSet/ergebnis', component);
+            };
+        };
+
+        /* ------------------------------ EGFR Exon 19  ---------------------------- */
+        // Ergebnis
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_1950'" then 
+        {
+            values.value as component where "$this = 'ergebnis'" then
+            {   
+                component -> tgt.component = create('BackboneElement') as componentErgebnis,
+                
+                componentErgebnis.valueCodeableConcept = cc('http://uk-koeln.de/fhir/ValueSet/ergebnis', component);
+            };
+        };
+
+        // Change DNA
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_1951'" then 
+        {
+            values.value as componentString where "$this = 'dna-chg'" then
+            {   
+                componentString -> tgt.component = create('BackboneElement') as tgtComponentString,
+                
+                tgtComponentString.valueString = componentString;
+            };
+        };  
+
+        // Change Protein
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_1952'" then 
+        {
+            values.value as componentString where "$this = 'amino-acid-chg'" then
+            {   
+                componentString -> tgt.component = create('BackboneElement') as tgtComponentString,
+                
+                tgtComponentString.valueString = componentString;
+            };
+        };
+
+        /* ------------------------------ EGFR Exon 20  ---------------------------- */
+        // Ergebnis
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_1954'" then 
+        {
+            values.value as component where "$this = 'ergebnis'" then
+            {   
+                component -> tgt.component = create('BackboneElement') as componentErgebnis,
+                
+                componentErgebnis.valueCodeableConcept = cc('http://uk-koeln.de/fhir/ValueSet/ergebnis', component);
+            };
+        };
+
+        // Change DNA
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_1955'" then 
+        {
+            values.value as componentString where "$this = 'dna-chg'" then
+            {   
+                componentString -> tgt.component = create('BackboneElement') as tgtComponentString,
+                
+                tgtComponentString.valueString = componentString;
+            };
+        };  
+
+        // Change Protein
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_1956'" then 
+        {
+            values.value as componentString where "$this = 'amino-acid-chg'" then
+            {   
+                componentString -> tgt.component = create('BackboneElement') as tgtComponentString,
+                
+                tgtComponentString.valueString = componentString;
+            };
+        };
+
+        /* ------------------------------ EGFR Exon 21  ---------------------------- */
+        // Ergebnis
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_1958'" then 
+        {
+            values.value as component where "$this = 'ergebnis'" then
+            {   
+                component -> tgt.component = create('BackboneElement') as componentErgebnis,
+                
+                componentErgebnis.valueCodeableConcept = cc('http://uk-koeln.de/fhir/ValueSet/ergebnis', component);
+            };
+        };
+
+        // Change DNA
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_1959'" then 
+        {
+            values.value as componentString where "$this = 'dna-chg'" then
+            {   
+                componentString -> tgt.component = create('BackboneElement') as tgtComponentString,
+                
+                tgtComponentString.valueString = componentString;
+            };
+        };  
+
+        // Change Protein
+        data.values as values where "blockindex = 5 and groupindex = 0 and itemid = 'id_1960'" then 
+        {
+            values.value as componentString where "$this = 'amino-acid-chg'" then
+            {   
+                componentString -> tgt.component = create('BackboneElement') as tgtComponentString,
+                
+                tgtComponentString.valueString = componentString;
+            };
+        };
+
+        /* ------------------------------ KRAS Exon 2  ---------------------------- */
+        // Date of Assessment
+        data.values as values where "blockindex = 6 and groupindex = 0 and itemid = 'id_1961'" then 
+        {
+            values.value as date -> tgt.effectiveDateTime = dateOp(date);
+        };
+
+        // Assay
+        data.values as values where "blockindex = 6 and groupindex = 0 and itemid = 'id_2610'" then 
+        {
+            values.value as component where "$this = 'assay'" then
+            {   
+                component ->    tgt.component = create('BackboneElement') as componentAssay,
+                
+                componentAssay.valueCodeableConcept = cc('http://ncit.nci.nih.gov', component);
+            };
+        };
+
+        // Hersteller
+        data.values as values where "blockindex = 6 and groupindex = 0 and itemid = 'id_2611'" then 
+        {
+            values.value as component where "$this = 'ergebnis'" then
+            {   
+                component -> tgt.component = create('BackboneElement') as componentHersteller,
+                
+                componentHersteller.valueCodeableConcept = cc('http://uk-koeln.de/fhir/ValueSet/ergebnis', component);
+            };
+        };
+
+        // Ergebnis
+        data.values as values where "blockindex = 6 and groupindex = 0 and itemid = 'id_1962'" then 
+        {
+            values.value as component where "$this = 'ergebnis'" then
+            {   
+                component -> tgt.component = create('BackboneElement') as componentHersteller,
+                
+                componentHersteller.valueCodeableConcept = cc('http://uk-koeln.de/fhir/ValueSet/ergebnis', component);
+            };
+        };
+        
+        // Change DNA
+        data.values as values where "blockindex = 6 and groupindex = 0 and itemid = 'id_1963'" then 
+        {
+            values.value as componentString where "$this = 'dna-chg'" then
+            {   
+                componentString -> tgt.component = create('BackboneElement') as tgtComponentString,
+                
+                tgtComponentString.valueString = componentString;
+            };
+        };  
+
+        // Change Protein
+        data.values as values where "blockindex = 6 and groupindex = 0 and itemid = 'id_1964'" then 
+        {
+            values.value as componentString where "$this = 'amino-acid-chg'" then
+            {   
+                componentString -> tgt.component = create('BackboneElement') as tgtComponentString,
+                
+                tgtComponentString.valueString = componentString;
+            };
+        };
+    };
+}
