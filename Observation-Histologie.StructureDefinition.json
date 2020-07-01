@@ -3,7 +3,7 @@
   "url": "http://uk-koeln.de/fhir/StructureDefinition/Observation/histologie",
   "name": "HistologieObservation",
   "title": "Histologie",
-  "status": "active",
+  "status": "draft",
   "fhirVersion": "4.0.0",
   "mapping": [
     {
