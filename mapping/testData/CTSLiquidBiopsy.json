@@ -1,0 +1,213 @@
+{
+  "version": "1.1",
+  "patid": "0G89D6Q8",
+  "sourcesystem": "https:\/\/nngm-qat.staging.healex.systems\/",
+  "operations": [
+    {
+      "oldstatus": "not_in_house",
+      "newstatus": "not_in_house",
+      "operationId": "S506",
+      "type": "statechange",
+      "editor": "https:\/\/clinicalsite.org\/person\/38",
+      "timestamp": "2020-07-08T12:00:35+02:00",
+      "crfid": "*-LP1"
+    },
+    {
+      "oldstatus": "not_in_house",
+      "newstatus": "editable_by_cm",
+      "operationId": "S507",
+      "type": "statechange",
+      "editor": "https:\/\/clinicalsite.org\/person\/38",
+      "timestamp": "2020-07-08T12:00:35+02:00",
+      "crfid": "*-LP1"
+    },
+    {
+      "data": [
+        {
+          "blockindex": 1,
+          "groupindex": 0,
+          "itemid": "assessment_id",
+          "values": [
+            {
+              "value": "12345"
+            }
+          ]
+        },
+        {
+          "blockindex": 2,
+          "groupindex": 0,
+          "itemid": "id_2435",
+          "values": [
+            {
+              "value": "Heidelberg"
+            }
+          ]
+        },
+        {
+          "blockindex": 2,
+          "groupindex": 0,
+          "itemid": "id_2616",
+          "values": [
+            {
+              "value": "VA 054"
+            }
+          ]
+        },
+        {
+          "blockindex": 3,
+          "groupindex": 0,
+          "itemid": "id_1260",
+          "values": [
+            {
+              "value": "01.0"
+            }
+          ]
+        },
+        {
+          "blockindex": 3,
+          "groupindex": 0,
+          "itemid": "id_2603",
+          "values": [
+            {
+              "value": "MiSeq"
+            }
+          ]
+        },
+        {
+          "blockindex": 3,
+          "groupindex": 0,
+          "itemid": "id_2604",
+          "values": [
+            {
+              "value": "Thermo Fisher Scientific"
+            }
+          ]
+        },
+        {
+          "blockindex": 3,
+          "groupindex": 0,
+          "itemid": "ngs_panel_panel_detail",
+          "values": [
+            {
+              "value": "nNGM v1.0"
+            }
+          ]
+        },
+        {
+          "blockindex": 4,
+          "groupindex": 0,
+          "values": [
+            {
+              "value": "1"
+            },
+            {
+              "unit": "id_1159",
+              "value": "EGFR NM_005228.3"
+            },
+            {
+              "unit": "id_1160",
+              "value": "01012020"
+            },
+            {
+              "unit": "id_35",
+              "value": "Exon"
+            },
+            {
+              "unit": "id_36",
+              "value": "HGVSc"
+            },
+            {
+              "unit": "id_37",
+              "value": "HGVSp"
+            },
+            {
+              "unit": "id_38__percent",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "blockindex": 4,
+          "groupindex": 0,
+          "itemid": "id_1159",
+          "values": [
+            {
+              "value": "EGFR NM_005228.3"
+            }
+          ]
+        },
+        {
+          "blockindex": 4,
+          "groupindex": 0,
+          "itemid": "id_1160",
+          "values": [
+            {
+              "value": "2020-01-01"
+            }
+          ]
+        },
+        {
+          "blockindex": 4,
+          "groupindex": 0,
+          "itemid": "id_35",
+          "values": [
+            {
+              "value": "Exon"
+            }
+          ]
+        },
+        {
+          "blockindex": 4,
+          "groupindex": 0,
+          "itemid": "id_36",
+          "values": [
+            {
+              "value": "HGVSc"
+            }
+          ]
+        },
+        {
+          "blockindex": 4,
+          "groupindex": 0,
+          "itemid": "id_37",
+          "values": [
+            {
+              "value": "HGVSp"
+            }
+          ]
+        },
+        {
+          "blockindex": 4,
+          "groupindex": 0,
+          "itemid": "id_38",
+          "values": [
+            {
+              "unit": "percent",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "blockindex": 5,
+          "groupindex": 0,
+          "itemid": "id_2520",
+          "values": [
+            {
+              "value": "abgeschlossen"
+            }
+          ]
+        }
+      ],
+      "operationId": "D136",
+      "type": "save",
+      "editor": "https:\/\/clinicalsite.org\/person\/38",
+      "timestamp": "2020-07-10T10:51:41+02:00",
+      "crfid": "*-LP1"
+    }
+  ],
+  "resourceType": "CTS_Transport",
+  "id": "41206050-3781-4c40-954f-ce932242e1b9",
+  "meta": {
+    "lastUpdated": "2020-07-15T12:27:24+02:00"
+  }
+}

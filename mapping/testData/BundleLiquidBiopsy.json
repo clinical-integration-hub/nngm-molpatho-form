@@ -1,0 +1,61 @@
+{
+  "resourceType": "Bundle",
+  "id": "cc2393c2-d4c5-4b73-9cf8-c24c7de5bb23",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "f04d073b-b032-438d-b14c-537df41508f3",
+        "meta": {
+          "profile": [
+            "http://uk-koeln.de/fhir/StructureDefinition/Specimen/nNGM"
+          ]
+        },
+        "subject": {
+          "reference": "https://vonk.fhir.dev.healex.systems/administration/Patient/0G89D6Q8"
+        },
+        "type": {
+          "coding": [
+            {
+              "version": "900000000000207008"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "value": "12345"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "14d68c2f-4b6c-4da8-a2ea-f2f4b09387dc",
+        "meta": {
+          "profile": [
+            "http://uk-koeln.de/fhir/StructureDefinition/Organization/clinical-site"
+          ]
+        },
+        "name": "Heidelberg"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "703b4aee-f30c-4993-bc59-cdde435c72be",
+        "meta": {
+          "profile": [
+            "http://uk-koeln.de/fhir/StructureDefinition/ServiceRequest/nNGM/testung"
+          ]
+        },
+        "intent": "proposal",
+        "subject": {
+          "reference": "https://vonk.fhir.dev.healex.systems/administration/Patient/0G89D6Q8"
+        },
+        "status": "abgeschlossen"
+      }
+    }
+  ]
+}
