@@ -31,7 +31,7 @@ group CreateTransformDiagnosticReport(source src: CTS_Transport, target tgt: Bac
     };
 }
 
-group CreateTransformServiceRequest(source src: CTS_Transport, target tgt: BackboneElement)
+group CreatTransformServiceRequest(source src: CTS_Transport, target tgt: BackboneElement)
 {
     src.operations as operations, operations.data as data then
     {
@@ -63,9 +63,9 @@ group TransformDiagnosticReport(source src: CTS_Transport, target tgt: Diagnosti
          };
 
 		/*--------------Version------------*/
-        data.values as values where "blockindex = 0 and groupindex = 0 and itemid = 'bu_version" then
+        data.values as values where "blockindex = 0 and groupindex = 0 and itemid = 'bu_version'" then
          {   
-            values.value as code -> tgt.status = value; //cc('', code);
+            values.value as code -> tgt.status = code; //cc('', code);
          };   
 
         /*--------------Klinische Information------------*/
