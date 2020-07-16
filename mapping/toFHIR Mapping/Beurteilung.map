@@ -1,6 +1,13 @@
 /// version = 0.1
 /// title = "Beurteilung"
 
+/*
+TO DO:
+- create valueset for version (Diagnosticreport.tgt.status)
+- create vs for durchfuehrung (Servicerequest.tgt.status)
+- create vs for abschluss? (Servicerequest.tgt.category)
+*/
+
 map "http://uk-koeln.de/fhir/StructureMap/FHIRBeurteilung" = FHIRBeurteilung 
 
 uses "http://hl7.org/fhir/StructureDefinition/CTS_Transport" as source
@@ -121,7 +128,7 @@ group TransformServiceRequest(source src: CTS_Transport, target tgt: ServiceRequ
         /*---------------Abschluss-----------*/
          data.values as values where "blockindex = 1 and groupindex = 0 and itemid = 'bu_closing'" then
         {   
-            values.value as abschluss -> tgt.status = abschluss; //cc('', abschluss);
+            values.value as abschluss -> tgt.category = abschluss; //cc('', abschluss);
         }; 
 
         /*---------------Datum des Abschlusses -----------*/
@@ -129,7 +136,7 @@ group TransformServiceRequest(source src: CTS_Transport, target tgt: ServiceRequ
         {   
             values.value as datumabschluss -> tgt.extension as datumAbschlusses,
                                               datumAbschlusses.url = 'http://uk-koeln.de/fhir/StructureDefinition/Extension/nNGM/datumabschluss',
-                                              datumAbschlusses.value = cast(datumabschluss, 'FHIR.code');
+                                              datumAbschlusses.value = dateOp(datumabschluss, 'dateTime');
         }; 
      
         /*---------------Datum des versands -----------*/
@@ -137,7 +144,7 @@ group TransformServiceRequest(source src: CTS_Transport, target tgt: ServiceRequ
         {   
             values.value as datumversands -> tgt.extension as datumVersands,
                                               datumVersands.url = 'http://uk-koeln.de/fhir/StructureDefinition/Extension/nNGM/datumversands',
-                                              datumVersands.value = cast(datumversands, 'FHIR.code');
+                                              datumVersands.value = dateOp(datumversands, 'dateTime');
         };   
     };
 }
