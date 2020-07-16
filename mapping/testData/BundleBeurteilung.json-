@@ -1,0 +1,72 @@
+{
+  "resourceType": "Bundle",
+  "id": "21119cff-8852-4700-9323-2363428e83ed",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "43e515b2-7746-44c5-9604-f322946041b5",
+        "meta": {
+          "profile": [
+            "http://uk-koeln.de/fhir/StructureDefinition/DiagnosticReport/Beurteilung"
+          ]
+        },
+        "subject": {
+          "reference": "https://vonk.fhir.dev.healex.systems/administration/Patient/0G89D6Q8"
+        },
+        "effectiveDateTime": "2020-01-01",
+        "status": "vorläufig",
+        "conclusion": "Klinische Information",
+        "conclusionCode": [
+          {
+            "extension": [
+              {
+                "valueBoolean": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "86a60a58-8a54-45f2-8684-c934f26d06b5",
+        "meta": {
+          "profile": [
+            "http://uk-koeln.de/fhir/StructureDefinition/ServiceRequest/nNGM/testung"
+          ]
+        },
+        "subject": {
+          "reference": "https://vonk.fhir.dev.healex.systems/administration/Patient/0G89D6Q8"
+        },
+        "status": "abgeschlossen",
+        "code": {
+          "coding": [
+            {
+              "_system": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                    "valueCode": "not-asked"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://uk-koeln.de/fhir/StructureDefinition/Extension/nNGM/datumabschluss",
+            "valueCode": "2020-02-02"
+          },
+          {
+            "url": "http://uk-koeln.de/fhir/StructureDefinition/Extension/nNGM/datumversands",
+            "valueCode": "2020-03-03"
+          }
+        ]
+      }
+    }
+  ]
+}
