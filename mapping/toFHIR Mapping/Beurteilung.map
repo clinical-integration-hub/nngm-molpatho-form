@@ -35,10 +35,10 @@ group CreatTransformServiceRequest(source src: CTS_Transport, target tgt: Backbo
 {
     src.operations as operations, operations.data as data then
     {
-        data.values as values where "blockindex = 0 and groupindex = 0 and itemid = 'id_2523'
-        or blockindex = 0 and groupindex = 0 and itemid ='id_bu_closing'
-        or blockindex = 0 and groupindex = 0 and itemid ='id_2524' 
-        or blockindex = 0 and groupindex = 0 and itemid ='id_2525'" then
+        data.values as values where "blockindex = 1 and groupindex = 0 and itemid = 'id_2523'
+        or blockindex = 1 and groupindex = 0 and itemid ='id_bu_closing'
+        or blockindex = 1 and groupindex = 0 and itemid ='id_2524' 
+        or blockindex = 1 and groupindex = 0 and itemid ='id_2525'" then
         {
             src -> tgt.resource = create('ServiceRequest') as servicerequest then TransformServiceRequest (src, servicerequest);
         };
@@ -128,16 +128,16 @@ group TransformServiceRequest(source src: CTS_Transport, target tgt: ServiceRequ
          data.values as values where "blockindex = 1 and groupindex = 0 and itemid = 'id_2524'" then
         {   
             values.value as datumabschluss -> tgt.extension as datumAbschlusses,
-                                              datumAbschlusses.system = 'http://uk-koeln.de/fhir/StructureDefinition/Extension/nNGM/datumabschluss',
-                                              datumAbschlusses.code = cast(datumabschluss, 'FHIR.code');
+                                              datumAbschlusses.url = 'http://uk-koeln.de/fhir/StructureDefinition/Extension/nNGM/datumabschluss',
+                                              datumAbschlusses.value = cast(datumabschluss, 'FHIR.code');
         }; 
      
         /*---------------Datum des versands -----------*/
          data.values as values where "blockindex = 1 and groupindex = 0 and itemid = 'id_2525'" then
         {   
             values.value as datumversands -> tgt.extension as datumVersands,
-                                              datumVersands.system = 'http://uk-koeln.de/fhir/StructureDefinition/Extension/nNGM/datumversands',
-                                              datumVersands.code = cast(datumversands, 'FHIR.code');
+                                              datumVersands.url = 'http://uk-koeln.de/fhir/StructureDefinition/Extension/nNGM/datumversands',
+                                              datumVersands.value = cast(datumversands, 'FHIR.code');
         };   
     };
 }
