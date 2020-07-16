@@ -1,0 +1,153 @@
+{
+  "version": "1.1",
+  "patid": "0G89D6Q8",
+  "sourcesystem": "https:\/\/nngm-qat.staging.healex.systems\/",
+  "operations": [
+    {
+      "oldstatus": "not_in_house",
+      "newstatus": "not_in_house",
+      "operationId": "S520",
+      "type": "statechange",
+      "editor": "https:\/\/clinicalsite.org\/person\/38",
+      "timestamp": "2020-07-08T12:00:35+02:00",
+      "crfid": "1-BU"
+    },
+    {
+      "oldstatus": "not_in_house",
+      "newstatus": "editable_by_cm",
+      "operationId": "S521",
+      "type": "statechange",
+      "editor": "https:\/\/clinicalsite.org\/person\/38",
+      "timestamp": "2020-07-08T12:00:35+02:00",
+      "crfid": "1-BU"
+    },
+    {
+      "oldstatus": "editable_by_cm",
+      "newstatus": "editable_by_cm",
+      "operationId": "S522",
+      "type": "statechange",
+      "editor": "https:\/\/clinicalsite.org\/person\/38",
+      "timestamp": "2020-07-08T12:00:35+02:00",
+      "crfid": "1-BU"
+    },
+    {
+      "data": [
+        {
+          "blockindex": 0,
+          "groupindex": 0,
+          "values": [
+            {
+              "value": "1"
+            },
+            {
+              "unit": "bu_creation_date",
+              "value": "01012020"
+            },
+            {
+              "unit": "bu_version___radio",
+              "value": "vorl\u00e4ufig"
+            },
+            {
+              "unit": "id_1352",
+              "value": "Klinische Information"
+            },
+            {
+              "unit": "id_2405___radio",
+              "value": "Ja"
+            }
+          ]
+        },
+        {
+          "blockindex": 0,
+          "groupindex": 0,
+          "itemid": "bu_creation_date",
+          "values": [
+            {
+              "value": "2020-01-01"
+            }
+          ]
+        },
+        {
+          "blockindex": 0,
+          "groupindex": 0,
+          "itemid": "bu_version",
+          "values": [
+            {
+              "value": "vorl\u00e4ufig"
+            }
+          ]
+        },
+        {
+          "blockindex": 0,
+          "groupindex": 0,
+          "itemid": "id_1352",
+          "values": [
+            {
+              "value": "Klinische Information"
+            }
+          ]
+        },
+        {
+          "blockindex": 0,
+          "groupindex": 0,
+          "itemid": "id_2405",
+          "values": [
+            {
+              "value": "Ja"
+            }
+          ]
+        },
+        {
+          "blockindex": 1,
+          "groupindex": 0,
+          "itemid": "bu_closing",
+          "values": [
+            {
+              "value": "Durchf\u00fchrung nicht m\u00f6glich (Material nicht auswertbar)"
+            }
+          ]
+        },
+        {
+          "blockindex": 1,
+          "groupindex": 0,
+          "itemid": "id_2523",
+          "values": [
+            {
+              "value": "abgeschlossen"
+            }
+          ]
+        },
+        {
+          "blockindex": 1,
+          "groupindex": 0,
+          "itemid": "id_2524",
+          "values": [
+            {
+              "value": "2020-02-02"
+            }
+          ]
+        },
+        {
+          "blockindex": 1,
+          "groupindex": 0,
+          "itemid": "id_2525",
+          "values": [
+            {
+              "value": "2020-03-03"
+            }
+          ]
+        }
+      ],
+      "operationId": "D154",
+      "type": "save",
+      "editor": "https:\/\/clinicalsite.org\/person\/38",
+      "timestamp": "2020-07-15T14:04:08+02:00",
+      "crfid": "1-BU"
+    }
+  ],
+  "resourceType": "CTS_Transport",
+  "id": "9e34ff6a-80b8-4adc-8832-cbf8d9280dd4",
+  "meta": {
+    "lastUpdated": "2020-07-15T14:04:12+02:00"
+  }
+}
