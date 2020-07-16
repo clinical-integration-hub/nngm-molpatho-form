@@ -1,6 +1,10 @@
 /// version = 0.1
 /// title = "CTSBeurteilung"
 
+/* TO DO
+- Missing repeat sections
+*/
+
 map "http://uk-koeln.de/fhir/StructureMap/CTSBeurteilung" = CTSBeurteilung
 
 uses "http://hl7.org/fhir/StructureDefinition/Bundle" as source
