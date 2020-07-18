@@ -133,6 +133,11 @@ group TransformALKCISHObservation(source src: CTS_Transport, target tgt: Observa
     src -> tgt.id = uuid();
     src -> tgt.meta as meta collate, meta.profile = 'http://uk-koeln.de/fhir/StructureDefinition/Observation/ish'; 
 
+    src -> tgt.status = 'final';
+
+    //methode
+    src -> tgt.method = cc('http://ncit.nci.nih.gov', 'C23022');
+
     src then MapALKDateOfAssessment(src, tgt);
     src then MapALKPhaenotyp(src, tgt);
     src then MapCISHCategory(src, tgt);
@@ -207,6 +212,10 @@ group TransformALKFISHObservation(source src: CTS_Transport, target tgt: Observa
 {
     src -> tgt.id = uuid();
     src -> tgt.meta as meta collate, meta.profile = 'http://uk-koeln.de/fhir/StructureDefinition/Observation/ish'; 
+
+    src -> tgt.status = 'final';
+
+    src -> tgt.method = cc('http://ncit.nci.nih.gov', 'C23022');
 
     src then MapALKDateOfAssessment(src, tgt);
     src then MapALKPhaenotyp(src, tgt);
@@ -295,6 +304,10 @@ group TransformMETCISHObservation(source src: CTS_Transport, target tgt: Observa
     src -> tgt.id = uuid();
     src -> tgt.meta as meta collate, meta.profile = 'http://uk-koeln.de/fhir/StructureDefinition/Observation/ish'; 
 
+    src -> tgt.status = 'final';
+
+    src -> tgt.method = cc('http://ncit.nci.nih.gov', 'C23022');
+
     src then MapMETDateOfAssessment(src, tgt);
     src then MapMETPhaenotyp(src, tgt);
     src then MapCISHCategory(src, tgt);
@@ -377,6 +390,10 @@ group TransformMETFISHObservation(source src: CTS_Transport, target tgt: Observa
 {
     src -> tgt.id = uuid();
     src -> tgt.meta as meta collate, meta.profile = 'http://uk-koeln.de/fhir/StructureDefinition/Observation/fish'; 
+
+    src -> tgt.status = 'final';
+
+    src -> tgt.method = cc('http://ncit.nci.nih.gov', 'C17563'):
 
     src then MapMETDateOfAssessment(src, tgt);
     src then MapMETPhaenotyp(src, tgt);
@@ -568,6 +585,10 @@ group TransformRETCISHObservation(source src: CTS_Transport, target tgt: Observa
     src -> tgt.id = uuid();
     src -> tgt.meta as meta collate, meta.profile = 'http://uk-koeln.de/fhir/StructureDefinition/Observation/ish'; 
 
+    src -> tgt.status = 'final';
+
+    src -> tgt.method = cc('http://ncit.nci.nih.gov', 'C23022');
+
     src then MapRETDateOfAssessment(src, tgt);
     src then MapRETPhaenotyp(src, tgt);
     src then MapCISHCategory(src, tgt);
@@ -642,6 +663,10 @@ group TransformRETFISHObservation(source src: CTS_Transport, target tgt: Observa
 {
     src -> tgt.id = uuid();
     src -> tgt.meta as meta collate, meta.profile = 'http://uk-koeln.de/fhir/StructureDefinition/Observation/ish'; 
+
+    src -> tgt.status = 'final';
+
+    src -> tgt.method = cc('http://ncit.nci.nih.gov', 'C23022');
 
     src then MapRETDateOfAssessment(src, tgt);
     src then MapRETPhaenotyp(src, tgt);
@@ -731,6 +756,10 @@ group TransformROS1CISHObservation(source src: CTS_Transport, target tgt: Observ
     src -> tgt.id = uuid();
     src -> tgt.meta as meta collate, meta.profile = 'http://uk-koeln.de/fhir/StructureDefinition/Observation/ish'; 
 
+    src -> tgt.status = 'final';
+
+    src -> tgt.method = cc('http://ncit.nci.nih.gov', 'C23022');
+
     src then MapROS1DateOfAssessment(src, tgt);
     src then MapROS1Phaenotyp(src, tgt);
     src then MapCISHCategory(src, tgt);
@@ -818,6 +847,10 @@ group TransformROS1FISHObservation(source src: CTS_Transport, target tgt: Observ
 {
     src -> tgt.id = uuid();
     src -> tgt.meta as meta collate, meta.profile = 'http://uk-koeln.de/fhir/StructureDefinition/Observation/ish'; 
+
+    src -> tgt.status = 'final';
+
+    src -> tgt.method = cc('http://ncit.nci.nih.gov', 'C23022');
 
     src then MapROS1DateOfAssessment(src, tgt);
     src then MapROS1Phaenotyp(src, tgt);
