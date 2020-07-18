@@ -393,7 +393,7 @@ group TransformMETFISHObservation(source src: CTS_Transport, target tgt: Observa
 
     src -> tgt.status = 'final';
 
-    src -> tgt.method = cc('http://ncit.nci.nih.gov', 'C17563'):
+    src -> tgt.method = cc('http://ncit.nci.nih.gov', 'C17563');
 
     src then MapMETDateOfAssessment(src, tgt);
     src then MapMETPhaenotyp(src, tgt);
