@@ -1,0 +1,243 @@
+{
+  "resourceType": "Bundle",
+  "id": "0d3a8c77-2618-4b10-88fa-8543e5d64f6d",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "17242e40-10ae-455b-a4b0-956543f6b4e0",
+        "meta": {
+          "profile": [
+            "http://uk-koeln.de/fhir/StructureDefinition/Specimen/nNGM"
+          ]
+        },
+        "subject": {
+          "reference": "http://localhost:4080/administration/Patient/8P6PKDK3"
+        },
+        "identifier": [
+          {
+            "value": "123_123_123"
+          }
+        ],
+        "collection": {
+          "collectedDateTime": "2020-01-01"
+        },
+        "accessionIdentifier": {
+          "value": "Eingangsnummer"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "version": "http://snomed.info/sct/900000000000207008",
+              "_code": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                    "valueCode": "not-asked"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "EpisodeOfCare",
+        "id": "9a255d03-6a14-4641-95e0-4029deffadc0",
+        "meta": {
+          "profile": [
+            "http://uk-koeln.de/fhir/StructureDefinition/EpisodeOfCare/nNGM"
+          ]
+        },
+        "status": "active",
+        "patient": {
+          "reference": "http://localhost:4080/administration/Patient/8P6PKDK3"
+        },
+        "identifier": [
+          {
+            "value": "Pathologie-Fall-ID",
+            "system": "http://uk-koeln.de/fhir/NamingSystem/nNGM/fallnummer"
+          },
+          {
+            "value": "Untersuchungs-ID",
+            "system": "http://uk-koeln.de/fhir/NamingSystem/nNGM/fallnummer"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "4c9c5146-b189-4819-be49-af33b06a1ac0",
+        "meta": {
+          "profile": [
+            "http://uk-koeln.de/fhir/StructureDefinition/Observation/nNGM/histologie"
+          ]
+        },
+        "status": "final",
+        "subject": {
+          "reference": "http://localhost:4080/administration/Patient/8P6PKDK3"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "system: urn:oid:2.16.840.1.113883.6.43.1",
+              "code": "8140/3",
+              "display": "Adenokarzinom"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "system: urn:oid:2.16.840.1.113883.15.16",
+              "code": "G1",
+              "display": "G1"
+            }
+          ]
+        },
+        "bodySite": {
+          "coding": [
+            {
+              "system": "system: urn:oid:2.16.840.1.113883.6.43.1",
+              "code": "C34.",
+              "display": "Bronchus und Lunge"
+            }
+          ]
+        },
+        "component": [
+          {
+            "valueQuantity": {
+              "value": 100,
+              "system": "http://unitsofmeasure.org",
+              "unit": "percentage",
+              "code": "%"
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                  "code": "8250/3"
+                }
+              ]
+            }
+          },
+          {
+            "valueQuantity": {
+              "value": 97,
+              "system": "http://unitsofmeasure.org",
+              "unit": "percentage",
+              "code": "%"
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                  "code": "8265/3"
+                }
+              ]
+            }
+          },
+          {
+            "valueQuantity": {
+              "value": 96,
+              "system": "http://unitsofmeasure.org",
+              "unit": "percentage",
+              "code": "%"
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                  "code": "8230/3"
+                }
+              ]
+            }
+          },
+          {
+            "valueQuantity": {
+              "value": 98,
+              "system": "http://unitsofmeasure.org",
+              "unit": "percentage",
+              "code": "%"
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                  "code": "8260/3"
+                }
+              ]
+            }
+          },
+          {
+            "valueQuantity": {
+              "value": 99,
+              "system": "http://unitsofmeasure.org",
+              "unit": "percentage",
+              "code": "%"
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                  "code": "8551/3"
+                }
+              ]
+            }
+          },
+          {
+            "valueQuantity": {
+              "value": 95,
+              "system": "http://unitsofmeasure.org",
+              "unit": "percentage",
+              "code": "%"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "aa160783-c669-4d23-869d-fd3fcc5c7307",
+        "meta": {
+          "profile": [
+            "http://uk-koeln.de/fhir/StructureDefinition/ServiceRequest/nNGM/testung"
+          ]
+        },
+        "status": "active",
+        "intent": "proposal",
+        "authoredOn": "2020-07-18T09:34:26+02:00",
+        "category": [
+          {
+            "text": "vollständig"
+          }
+        ],
+        "occurrenceDateTime": "2020-01-02",
+        "code": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+              "valueCode": "not-asked"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
