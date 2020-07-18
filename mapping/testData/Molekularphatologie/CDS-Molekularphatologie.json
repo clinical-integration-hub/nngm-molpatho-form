@@ -1,0 +1,695 @@
+{
+    "version": "1.1",
+    "patid": "uEyqyCeV",
+    "sourcesystem": "https:\/\/cds.cds-test.staging.healex.systems\/",
+    "operations": [
+        {
+            "data": [
+                {
+                    "blockindex": 1,
+                    "groupindex": 0,
+                    "itemid": "id_1601",
+                    "values": [
+                        {
+                            "unit": "count",
+                            "value": "123"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2099",
+                    "values": [
+                        {
+                            "value": "Fusion"
+                        },
+                        {
+                            "unit": "predef",
+                            "value": "Fusion"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2133",
+                    "values": [
+                        {
+                            "value": "Amplifikation"
+                        },
+                        {
+                            "unit": "predef",
+                            "value": "Amplifikation"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2184",
+                    "values": [
+                        {
+                            "value": "Fusion"
+                        },
+                        {
+                            "unit": "predef",
+                            "value": "Fusion"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2212",
+                    "values": [
+                        {
+                            "value": "Fusion"
+                        },
+                        {
+                            "unit": "predef",
+                            "value": "Fusion"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 0,
+                    "groupindex": 0,
+                    "itemid": "id_2435",
+                    "values": [
+                        {
+                            "value": "Bonn"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 0,
+                    "groupindex": 0,
+                    "itemid": "id_2617",
+                    "values": [
+                        {
+                            "value": "Version 3.0"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 2,
+                    "groupindex": 0,
+                    "itemid": "id_2509",
+                    "values": [
+                        {
+                            "value": "ALK"
+                        },
+                        {
+                            "value": "MET"
+                        },
+                        {
+                            "value": "RET"
+                        },
+                        {
+                            "value": "ROS1"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 2,
+                    "groupindex": 0,
+                    "itemid": "id_2510",
+                    "values": [
+                        {
+                            "value": "ALK"
+                        },
+                        {
+                            "value": "MET"
+                        },
+                        {
+                            "value": "RET"
+                        },
+                        {
+                            "value": "ROS1"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2098",
+                    "values": [
+                        {
+                            "value": "2020-01-01"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2108",
+                    "values": [
+                        {
+                            "value": "ZytoDot 2C SPEC ALK Break Apart Probe"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2109",
+                    "values": [
+                        {
+                            "value": "Zytovision"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2112",
+                    "values": [
+                        {
+                            "value": "positiv"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2113",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "100"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2115",
+                    "values": [
+                        {
+                            "value": "ZytoLight SPEC ALK Dual Colour Break Apart Probe"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2116",
+                    "values": [
+                        {
+                            "value": "Abbott"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2119",
+                    "values": [
+                        {
+                            "value": "negativ"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2120",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "99"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 3,
+                    "groupindex": 0,
+                    "itemid": "id_2121",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "98"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2132",
+                    "values": [
+                        {
+                            "value": "2020-01-02"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2143",
+                    "values": [
+                        {
+                            "value": "MET DNP Probe\/Chromosome 7 DIG Probe"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2144",
+                    "values": [
+                        {
+                            "value": "Roche Ventana"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2147",
+                    "values": [
+                        {
+                            "value": "nicht auswertbar"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2148",
+                    "values": [
+                        {
+                            "value": "Amplifikation moderate-level"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2150",
+                    "values": [
+                        {
+                            "value": "Kreatech MET (7q31)\/SE 7"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2151",
+                    "values": [
+                        {
+                            "value": "LMU"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2154",
+                    "values": [
+                        {
+                            "value": "negativ"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2155",
+                    "values": [
+                        {
+                            "value": "negativ"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2156",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "97"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2157",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "96"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2158",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "95"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2159",
+                    "values": [
+                        {
+                            "unit": "count",
+                            "value": "94"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2160",
+                    "values": [
+                        {
+                            "unit": "count",
+                            "value": "93"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2161",
+                    "values": [
+                        {
+                            "unit": "count",
+                            "value": "92"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2162",
+                    "values": [
+                        {
+                            "unit": "count",
+                            "value": "91"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2163",
+                    "values": [
+                        {
+                            "unit": "count",
+                            "value": "80"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 4,
+                    "groupindex": 0,
+                    "itemid": "id_2164",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "89"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2183",
+                    "values": [
+                        {
+                            "value": "2020-01-03"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2187",
+                    "values": [
+                        {
+                            "value": "Unbekannt (externe Untersuchung)"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2188",
+                    "values": [
+                        {
+                            "value": "Zytovision"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2191",
+                    "values": [
+                        {
+                            "value": "positiv"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2192",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "88"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2194",
+                    "values": [
+                        {
+                            "value": "RET Break Apart Sonde_LMU"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2195",
+                    "values": [
+                        {
+                            "value": "Abbott"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2198",
+                    "values": [
+                        {
+                            "value": "nicht auswertbar"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2199",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "87"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 5,
+                    "groupindex": 0,
+                    "itemid": "id_2200",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "86"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2211",
+                    "values": [
+                        {
+                            "value": "2020-01-04"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2221",
+                    "values": [
+                        {
+                            "value": "ZytoDot 2C SPEC ROS1 Break Apart Probe"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2222",
+                    "values": [
+                        {
+                            "value": "Zytovision"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2225",
+                    "values": [
+                        {
+                            "value": "negativ"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2226",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "86"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2227",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "85"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2229",
+                    "values": [
+                        {
+                            "value": "Unbekannt (externe Untersuchung)"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2230",
+                    "values": [
+                        {
+                            "value": "Abbott"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2233",
+                    "values": [
+                        {
+                            "value": "negativ"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2234",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "84"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 6,
+                    "groupindex": 0,
+                    "itemid": "id_2235",
+                    "values": [
+                        {
+                            "unit": "percent",
+                            "value": "83"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 7,
+                    "groupindex": 0,
+                    "itemid": "id_2462",
+                    "values": [
+                        {
+                            "value": "Teiluntersuchungen"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 7,
+                    "groupindex": 0,
+                    "itemid": "id_2520",
+                    "values": [
+                        {
+                            "value": "abgeschlossen"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 7,
+                    "groupindex": 0,
+                    "itemid": "id_2521",
+                    "values": [
+                        {
+                            "value": "2020-01-05"
+                        }
+                    ]
+                },
+                {
+                    "blockindex": 8,
+                    "groupindex": 0,
+                    "itemid": "assessment_id",
+                    "values": [
+                        {
+                            "value": "Untersuchungs-ID"
+                        }
+                    ]
+                }
+            ],
+            "operationId": "D27",
+            "type": "save",
+            "editor": "https:\/\/clinicalsite.org\/person\/38",
+            "timestamp": "2020-07-18T13:02:38+02:00",
+            "crfid": "1-MP1"
+        }
+    ],
+    "resourceType": "CTS_Transport",
+    "id": "b19c63cd-b3c6-4f11-88e7-97513a8bd8ff",
+    "meta": {
+        "lastUpdated": "2020-07-18T13:24:36+02:00"
+    }
+}
